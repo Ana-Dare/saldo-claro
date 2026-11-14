@@ -1,0 +1,532 @@
+/* SaldoClaro — modo escuro; azul na identidade; verde/vermelho só em status */
+:root {
+  --sc-navy: #E8EEF6;
+  --sc-blue: #5B9BD5;
+  --sc-blue-mid: #7AB0E0;
+  --sc-blue-soft: #1A2A3D;
+  --sc-bg: #0A0A0A;
+  --sc-surface: #141414;
+  --sc-surface-2: #1C1C1C;
+  --sc-border: #2A2A2A;
+  --sc-muted: #9AA8B8;
+  --sc-white: #FFFFFF;
+  --sc-input: #0F0F0F;
+  --sc-paid: #3DCF8E;
+  --sc-pending: #F07167;
+  --sc-radius: 8px;
+}
+
+.gradio-container,
+.gradio-container .main,
+.gradio-container .wrap,
+.gradio-container .contain,
+.gradio-container .fillable,
+div.fillable,
+body,
+.dark,
+.gradio-container.dark {
+  background: var(--sc-bg) !important;
+  color: var(--sc-navy) !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.gradio-container {
+  margin: 0 !important;
+  padding: 16px 28px 36px !important;
+  box-sizing: border-box !important;
+}
+
+/* ——— Blocos / painéis ——— */
+.gradio-container .block,
+.gradio-container .form,
+.gradio-container .panel,
+.gradio-container .accordion,
+.gradio-container .group,
+.gradio-container .tabitem,
+.gradio-container fieldset {
+  background: var(--sc-surface) !important;
+  border: 1px solid var(--sc-border) !important;
+  border-radius: var(--sc-radius) !important;
+  box-shadow: none !important;
+  color: var(--sc-navy) !important;
+}
+
+.gradio-container .form {
+  gap: 10px !important;
+  padding: 4px !important;
+}
+
+.gradio-container label,
+.gradio-container .label-wrap span,
+.gradio-container .label-wrap,
+.gradio-container span.svelte-1gfkn6j,
+.gradio-container .block > label {
+  color: var(--sc-muted) !important;
+  font-weight: 500 !important;
+  font-size: 0.82rem !important;
+}
+
+/* ——— Inputs / selects (texto sempre legível) ——— */
+.gradio-container input,
+.gradio-container textarea,
+.gradio-container select,
+.gradio-container .wrap-inner,
+.gradio-container .secondary-wrap,
+.gradio-container .dropdown-arrow,
+.gradio-container [data-testid="textbox"],
+.gradio-container [data-testid="number-input"],
+.gradio-container .container,
+.gradio-container .svelte-1dx1ybn,
+.gradio-container .token,
+.gradio-container .single-select,
+.gradio-container .multiselect {
+  background: var(--sc-input) !important;
+  border-color: var(--sc-border) !important;
+  border-width: 1px !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  color: var(--sc-white) !important;
+}
+
+.gradio-container input::placeholder,
+.gradio-container textarea::placeholder {
+  color: #6B7785 !important;
+  opacity: 1 !important;
+}
+
+.gradio-container input:focus,
+.gradio-container textarea:focus,
+.gradio-container select:focus,
+.gradio-container .wrap-inner:focus-within {
+  border-color: var(--sc-blue) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(91, 155, 213, 0.2) !important;
+}
+
+/* Valor selecionado no Dropdown Gradio */
+.gradio-container .wrap-inner input,
+.gradio-container .wrap-inner span,
+.gradio-container .wrap-inner .secondary-wrap,
+.gradio-container .wrap-inner .token > div,
+.gradio-container .wrap-inner .token span,
+.gradio-container [role="listbox"] + *,
+.gradio-container .single-select span,
+.gradio-container .dropdown-arrow svg {
+  color: var(--sc-white) !important;
+  fill: var(--sc-muted) !important;
+  background: transparent !important;
+}
+
+/* Lista aberta do dropdown */
+.gradio-container ul.options,
+.gradio-container .options,
+.gradio-container [role="listbox"],
+.gradio-container .dropdown-content,
+ul[role="listbox"],
+div[role="listbox"] {
+  background: var(--sc-surface-2) !important;
+  border: 1px solid var(--sc-border) !important;
+  color: var(--sc-white) !important;
+}
+
+.gradio-container ul.options li,
+.gradio-container .options li,
+.gradio-container [role="option"],
+ul[role="listbox"] li,
+div[role="listbox"] [role="option"] {
+  color: var(--sc-white) !important;
+  background: var(--sc-surface-2) !important;
+}
+
+.gradio-container ul.options li:hover,
+.gradio-container .options li:hover,
+.gradio-container [role="option"]:hover,
+.gradio-container ul.options li.selected,
+.gradio-container [role="option"][aria-selected="true"] {
+  background: var(--sc-blue-soft) !important;
+  color: var(--sc-white) !important;
+}
+
+.gradio-container button {
+  border-radius: 6px !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+.gradio-container button.primary {
+  background: var(--sc-blue) !important;
+  border-color: var(--sc-blue) !important;
+  color: #0A0A0A !important;
+}
+
+.gradio-container button.secondary,
+.gradio-container button[variant="secondary"] {
+  background: var(--sc-surface-2) !important;
+  border: 1px solid var(--sc-border) !important;
+  color: var(--sc-navy) !important;
+}
+
+.gradio-container button.stop,
+.gradio-container button[variant="stop"] {
+  background: #3A1A1A !important;
+  border-color: #5A2A2A !important;
+  color: var(--sc-pending) !important;
+}
+
+.gradio-container .accordion > button,
+.gradio-container .label-wrap {
+  background: var(--sc-surface) !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--sc-navy) !important;
+}
+
+/* Markdown / HTML genérico */
+.gradio-container .prose,
+.gradio-container .markdown,
+.gradio-container .html-container,
+.gradio-container p,
+.gradio-container h1,
+.gradio-container h2,
+.gradio-container h3,
+.gradio-container strong {
+  color: var(--sc-navy) !important;
+}
+
+/* Cabeçalho */
+.sc-header {
+  margin-bottom: 10px;
+}
+
+.sc-app-name {
+  color: var(--sc-blue);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 2px 0;
+}
+
+.sc-title {
+  color: var(--sc-white);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.sc-subtitle {
+  color: var(--sc-muted);
+  font-size: 0.9rem;
+  margin: 0 0 6px 0;
+}
+
+.sc-month-nav {
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 4px 0 10px 0;
+}
+
+.sc-summary-title {
+  color: var(--sc-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.sc-section-title {
+  color: var(--sc-white);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 16px 0 4px 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--sc-border);
+}
+
+.sc-section-compact {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+
+.sc-section-help {
+  color: var(--sc-muted);
+  font-size: 0.8rem;
+  margin: 0 0 8px 0;
+}
+
+.sc-form-title {
+  color: var(--sc-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 4px 0 8px 0;
+}
+
+.sc-metrics-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.sc-card {
+  background: var(--sc-surface);
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  padding: 14px 16px;
+  box-sizing: border-box;
+}
+
+.sc-card-metric {
+  flex: 1 1 160px;
+  min-width: 130px;
+}
+
+.sc-metric-label {
+  color: var(--sc-muted);
+  font-size: 0.78rem;
+  margin: 0 0 6px 0;
+}
+
+.sc-metric-value {
+  color: var(--sc-white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.sc-value-income { color: var(--sc-blue-mid); }
+.sc-value-pending { color: var(--sc-blue); }
+.sc-value-balance { color: var(--sc-white); }
+
+.sc-projected {
+  background: var(--sc-surface);
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  padding: 16px 18px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 4px 0 6px 0;
+}
+
+.sc-projected-title {
+  color: var(--sc-white);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.sc-projected-value {
+  color: var(--sc-blue);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.sc-projected-help {
+  color: var(--sc-muted);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.sc-status-ok { color: var(--sc-blue); font-size: 0.82rem; }
+.sc-status-error { color: var(--sc-pending); font-size: 0.82rem; font-weight: 500; }
+.sc-status-loading { color: var(--sc-muted); font-size: 0.82rem; }
+
+.sc-empty {
+  background: var(--sc-surface);
+  border: 1px dashed var(--sc-border);
+  border-radius: var(--sc-radius);
+  padding: 14px;
+  text-align: center;
+  color: var(--sc-muted);
+}
+
+.sc-empty-tight {
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 0.84rem;
+}
+
+.sc-filters label {
+  color: var(--sc-muted) !important;
+  font-weight: 500 !important;
+}
+
+/* Lista de despesas */
+.sc-expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.sc-expense-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  background: var(--sc-surface);
+  border: 1px solid var(--sc-border);
+  border-radius: var(--sc-radius);
+  padding: 10px 12px;
+}
+
+.sc-expense-row:hover {
+  border-color: #3A4A5C;
+}
+
+.sc-expense-name {
+  display: block;
+  color: var(--sc-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.sc-expense-cat {
+  display: inline-block;
+  margin-top: 3px;
+  color: var(--sc-blue);
+  background: var(--sc-blue-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.sc-expense-amount {
+  color: var(--sc-white);
+  font-weight: 700;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-dot-paid,
+.sc-dot-pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.sc-dot-paid {
+  color: var(--sc-paid);
+  background: #143226;
+}
+
+.sc-dot-pending {
+  color: var(--sc-pending);
+  background: #3A1A1A;
+}
+
+/* Tabelas */
+.sc-table,
+.sc-table-compact {
+  background: var(--sc-surface) !important;
+  border: 1px solid var(--sc-border) !important;
+  border-radius: var(--sc-radius) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.sc-table .label-wrap,
+.sc-table-compact .label-wrap,
+.sc-table label,
+.sc-table-compact label {
+  color: var(--sc-muted) !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  padding: 8px 10px 4px !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+
+.sc-table table,
+.sc-table-compact table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  font-size: 0.84rem !important;
+  color: var(--sc-navy) !important;
+}
+
+.sc-table thead th,
+.sc-table-compact thead th,
+.sc-table th,
+.sc-table-compact th {
+  background: var(--sc-surface-2) !important;
+  color: var(--sc-muted) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: left !important;
+  padding: 8px 10px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--sc-border) !important;
+  white-space: nowrap;
+}
+
+.sc-table tbody td,
+.sc-table-compact tbody td,
+.sc-table td,
+.sc-table-compact td {
+  padding: 9px 10px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--sc-border) !important;
+  background: var(--sc-surface) !important;
+  color: var(--sc-navy) !important;
+  vertical-align: middle !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-table tbody tr:last-child td,
+.sc-table-compact tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.sc-table tbody tr:nth-child(even) td,
+.sc-table-compact tbody tr:nth-child(even) td {
+  background: #121212 !important;
+}
+
+.sc-table tbody tr:hover td,
+.sc-table-compact tbody tr:hover td {
+  background: var(--sc-blue-soft) !important;
+  cursor: pointer;
+}
+
+.sc-table table th:first-child,
+.sc-table table td:first-child,
+.sc-table-compact table th:first-child,
+.sc-table-compact table td:first-child {
+  color: var(--sc-muted) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  width: 44px;
+  max-width: 52px;
+}
+
+@media (max-width: 640px) {
+  .gradio-container { padding: 10px 10px 24px !important; }
+  .sc-title { font-size: 1.35rem; }
+  .sc-expense-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .sc-projected-value { font-size: 1.4rem; }
+  .sc-table tbody td,
+  .sc-table-compact tbody td {
+    padding: 8px !important;
+  }
+}
