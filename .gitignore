@@ -1,0 +1,76 @@
+# ——— Python ———
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ——— Ambiente virtual ———
+.venv/
+venv/
+ENV/
+env/
+
+# ——— Variáveis ———
+.env
+.env.*
+!.env.example
+
+# ——— Banco de dados local (SQLite) ———
+*.db
+*.sqlite
+*.sqlite3
+
+# ——— Testes e cobertura ———
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# ——— Gradio ———
+.gradio/
+flagged/
+
+# ——— Cursor ———
+.cursor/
+**/.cursor/
+.cursorrules
+.cursorrules.*
+.cursorignore
+
+# ——— IDEs e editores ———
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ——— Logs e temporários ———
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+*.tmp
+*.temp
+.cache/
